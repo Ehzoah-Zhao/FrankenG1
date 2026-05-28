@@ -1,0 +1,21 @@
+﻿defaults:
+  - joints_renderer: matplotlib
+  - smpl_renderer: humor
+  - defaults
+  - _self_
+
+run_dir: pretrained/frankenbot
+ckpt: frankenbot
+
+input_type: val
+num_sample: 10
+fast: false
+
+gender: male
+guidance: 1.0
+baseline: none
+device: cuda
+value_from: smpl
+
+user_input_file: ???
+timeline: ???
