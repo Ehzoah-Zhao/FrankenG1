@@ -1,4 +1,4 @@
-resume_dir: null
+﻿resume_dir: null
 ckpt: last
 
 run_dir: outputs_g1/frankenbot_clip_part_g1_g1_joints_g1-frankenstein

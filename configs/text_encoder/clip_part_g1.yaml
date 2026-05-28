@@ -18,3 +18,5 @@ data:
     load_global_type: caption
     rand_mask: true
     mask_ratio: 0.5
+    no_model: True
+

@@ -1,4 +1,4 @@
-import os
+﻿import os
 import logging
 import hydra
 from omegaconf import DictConfig
@@ -67,7 +67,7 @@ def save_masked_stats(dataset, run_dir):
     dataset.is_training = is_training
 
 
-@hydra.main(config_path="configs", config_name="train_g1", version_base="1.3")
+@hydra.main(config_path="configs", config_name="train_g1_flat", version_base="1.3")
 def train(cfg: DictConfig):
     ckpt = None
     if cfg.resume_dir is not None:
@@ -82,6 +82,7 @@ def train(cfg: DictConfig):
     else:
         resume_dir = None
         logger.info("Training script")
+        logger.info("The config can be found here: " + config_path)
 
     import src.prepare
     import pytorch_lightning as pl
@@ -110,5 +111,4 @@ def train(cfg: DictConfig):
 
 if __name__ == "__main__":
     train()
-
 
