@@ -41,6 +41,3 @@ dependencies:
       - termcolor==2.3.0
       - semantic-version==2.10.0
       - roma==1.4.1
-
-      # CLIP
-      - git+https://github.com/openai/CLIP.git
