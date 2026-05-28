@@ -23,5 +23,6 @@ defaults:
   - _self_
 
 data:
+  motion_loader: ${motion_loader}
   text_encoder:
     no_model: True
