@@ -1,4 +1,4 @@
-trainer:
+﻿trainer:
   _target_: pytorch_lightning.Trainer
 
   max_epochs: 6000
@@ -25,10 +25,6 @@ trainer:
       precision: 3
     - _target_: src.callback.tqdmbar.TQDMProgressBar
     - _target_: src.callback.eval_in_training.EvalInTraining
-      # Off by default. Flip enabled=true (CLI: +trainer.callbacks.3.enabled=true)
-      # to track Per-action / Per-seq / Avg-part R@1 + FID across training. The
-      # callback spawns eval_part.py + src.eval.run + src.eval.paper_table as
-      # subprocesses every `every_n_epochs`, so a failure can't kill training.
       enabled: false
       every_n_epochs: 200
       num_turns: 1
@@ -41,7 +37,10 @@ trainer:
       max_runtime_seconds: 7200
 
   logger:
+    - _target_: pytorch_lightning.loggers.WandbLogger
+      save_dir: ${run_dir}
+      name: ${run_dir}
+      project: FrankenG1
     - _target_: src.logger.csv.CSVLogger
       save_dir: ${run_dir}
       name: logs
-
