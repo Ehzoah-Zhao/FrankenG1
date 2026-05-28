@@ -22,7 +22,7 @@ diffusion:
   denoiser:
     _target_: src.model.backbones.frankenmotion.TransformerDenoiser
     nfeats: 771
-    tx_dim: ${data.text_encoder.nfeats}
+    tx_dim: 512
     latent_dim: 512
     ff_size: 2048
     num_layers: 4
@@ -48,3 +48,4 @@ diffusion:
   timesteps: 100
   prediction: x
   lr: 1e-4
+
