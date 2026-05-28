@@ -14,6 +14,15 @@ data:
   condition: t2m
   annotation: annotations.json
 
+  motion_loader:
+    _target_: src.data.g1_motion.G1MotionLoader
+    base_dir: F:/HumanML3D_G1/unitreeg1/new_joint_vecs_v4
+    fps: 20.0
+    disable: false
+    nfeats: 363
+    umin_s: 0.5
+    umax_s: 3.0
+
 diffusion:
   _target_: src.model.gaussian.GaussianDiffusion
   g_text: True
@@ -48,4 +57,3 @@ diffusion:
   timesteps: 100
   prediction: x
   lr: 1e-4
-

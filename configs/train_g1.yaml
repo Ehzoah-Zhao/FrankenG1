@@ -1,8 +1,8 @@
 ﻿resume_dir: null
 ckpt: last
 
-motion_features: ${hydra:runtime.choices.motion_loader}
-text_features: ${hydra:runtime.choices.text_encoder}
+motion_features: g1_joints
+text_features: clip_part_g1
 
 run_dir: outputs_g1/frankenbot_${text_features}_${motion_features}_${dataset}${run_suffix}
 run_suffix: ""
@@ -16,13 +16,11 @@ dataset: g1-frankenstein
 
 defaults:
   - text_encoder: clip_part_g1
-  - motion_loader: g1_joints
   - frankenbot
   - trainer
   - defaults
   - _self_
 
 data:
-  motion_loader: ${motion_loader}
   text_encoder:
     no_model: True
