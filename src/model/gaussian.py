@@ -1,4 +1,4 @@
-import logging
+﻿import logging
 from collections import defaultdict
 from tqdm import tqdm
 
@@ -129,6 +129,8 @@ class LearnableWeightedMSELoss(nn.Module):
 def masked(tensor, mask): #set False to 0
     if isinstance(tensor, list):
         return [masked(t, mask) for t in tensor]
+    if mask.shape != tensor.shape:
+        mask = mask.expand_as(tensor)
     tensor[~mask] = 0.0
     return tensor
 
@@ -896,7 +898,7 @@ class GaussianDiffusionForcing(DiscreteDiffusion):
         Initialize the Diffusion Forcing model.
         
         Args:
-            denoiser: Model that predicts x₀ or noise.
+            denoiser: Model that predicts x鈧€ or noise.
             schedule: Beta schedule for the diffusion process.
             timesteps: Number of diffusion timesteps.
             motion_normalizer: Normalizer for motion features.
