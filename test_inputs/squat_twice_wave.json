@@ -1,0 +1,34 @@
+﻿{
+    "duration": 8.0,
+    "sequence_caption": "a person squats twice then waves",
+    "body_parts": {
+        "action":     [
+            {"start": 0.0, "end": 4.0, "text": "squat"},
+            {"start": 4.0, "end": 6.0, "text": "stand"},
+            {"start": 6.0, "end": 8.0, "text": "wave"}
+        ],
+        "trajectory": [{"start": 0.0, "end": 8.0, "text": "stationary"}],
+        "spine":      [{"start": 0.0, "end": 8.0, "text": "spine upright"}],
+        "head":       [{"start": 0.0, "end": 8.0, "text": "look forward"}],
+        "left_arm":   [
+            {"start": 0.0, "end": 6.0, "text": "arm hanging by side"},
+            {"start": 6.0, "end": 8.0, "text": "wave left arm"}
+        ],
+        "right_arm":  [
+            {"start": 0.0, "end": 6.0, "text": "arm hanging by side"},
+            {"start": 6.0, "end": 8.0, "text": "wave right arm"}
+        ],
+        "left_leg":   [
+            {"start": 0.0, "end": 2.0, "text": "squat"},
+            {"start": 2.0, "end": 3.0, "text": "stand"},
+            {"start": 3.0, "end": 5.0, "text": "squat"},
+            {"start": 5.0, "end": 8.0, "text": "stand"}
+        ],
+        "right_leg":  [
+            {"start": 0.0, "end": 2.0, "text": "squat"},
+            {"start": 2.0, "end": 3.0, "text": "stand"},
+            {"start": 3.0, "end": 5.0, "text": "squat"},
+            {"start": 5.0, "end": 8.0, "text": "stand"}
+        ]
+    }
+}

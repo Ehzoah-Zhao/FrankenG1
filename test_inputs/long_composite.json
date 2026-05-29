@@ -1,0 +1,53 @@
+﻿{
+    "duration": 16.0,
+    "sequence_caption": "a person walks forward, turns left, squats, spins around, then walks backward",
+    "body_parts": {
+        "action":     [
+            {"start": 0.0, "end": 4.0, "text": "walk"},
+            {"start": 4.0, "end": 6.0, "text": "turn left"},
+            {"start": 6.0, "end": 9.0, "text": "squat"},
+            {"start": 9.0, "end": 13.0, "text": "spin"},
+            {"start": 13.0, "end": 16.0, "text": "walk backward"}
+        ],
+        "trajectory": [
+            {"start": 0.0, "end": 4.0, "text": "walk forward"},
+            {"start": 4.0, "end": 6.0, "text": "turn left"},
+            {"start": 6.0, "end": 9.0, "text": "stationary"},
+            {"start": 9.0, "end": 13.0, "text": "spin"},
+            {"start": 13.0, "end": 16.0, "text": "walk backward"}
+        ],
+        "spine":      [{"start": 0.0, "end": 16.0, "text": "spine upright"}],
+        "head":       [
+            {"start": 0.0, "end": 4.0, "text": "look forward"},
+            {"start": 4.0, "end": 6.0, "text": "look left"},
+            {"start": 6.0, "end": 13.0, "text": "look forward"},
+            {"start": 13.0, "end": 16.0, "text": "look forward"}
+        ],
+        "left_arm":   [
+            {"start": 0.0, "end": 4.0, "text": "arm swinging"},
+            {"start": 4.0, "end": 9.0, "text": "arm hanging by side"},
+            {"start": 9.0, "end": 13.0, "text": "arm hanging by side"},
+            {"start": 13.0, "end": 16.0, "text": "arm swinging"}
+        ],
+        "right_arm":  [
+            {"start": 0.0, "end": 4.0, "text": "arm swinging"},
+            {"start": 4.0, "end": 9.0, "text": "arm hanging by side"},
+            {"start": 9.0, "end": 13.0, "text": "arm hanging by side"},
+            {"start": 13.0, "end": 16.0, "text": "arm swinging"}
+        ],
+        "left_leg":   [
+            {"start": 0.0, "end": 4.0, "text": "walk"},
+            {"start": 4.0, "end": 6.0, "text": "turn left"},
+            {"start": 6.0, "end": 9.0, "text": "squat"},
+            {"start": 9.0, "end": 13.0, "text": "spin"},
+            {"start": 13.0, "end": 16.0, "text": "walk backward"}
+        ],
+        "right_leg":  [
+            {"start": 0.0, "end": 4.0, "text": "walk"},
+            {"start": 4.0, "end": 6.0, "text": "turn left"},
+            {"start": 6.0, "end": 9.0, "text": "squat"},
+            {"start": 9.0, "end": 13.0, "text": "spin"},
+            {"start": 13.0, "end": 16.0, "text": "walk backward"}
+        ]
+    }
+}
