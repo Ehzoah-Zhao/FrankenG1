@@ -1,5 +1,6 @@
 ﻿"""Generate G1 robot motions from part-level text prompts."""
 from __future__ import annotations
+import numpy as np
 import logging, os, json, shutil
 import hydra
 from hydra.utils import instantiate
@@ -133,7 +134,7 @@ def generate(c: DictConfig):
         length = infos["output_lengths"][idx]
         xstart_i = xstart[idx].cpu()
         npy_path = os.path.join(exp_dir, f"{idx:06d}.npy")
-        output = xstart_i[:length, :cfg.data.motion_loader.nfeats]
+        output = xstart_i[:length, :cfg.data.motion_loader.nfeats].detach()
         np.save(npy_path, output.numpy())
 
         # Save text input
