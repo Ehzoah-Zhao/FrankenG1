@@ -103,9 +103,8 @@ def generate(c: DictConfig):
             "mask": torch.ones(1, duration_frames).bool(),
             "keyid": ["user_input_0"],
         }
-        batch["tx"]["mask"] = torch.ones(1, 1, dtype=torch.bool, device=c.device)
-        batch["tx"]["length"] = 1  # scalar, prepare_tx_emb expects this
-        batch["tx_uncond_batch"] = {"x": torch.zeros(1, 512, device=c.device), "mask": torch.ones(1, 1, dtype=torch.bool, device=c.device), "length": 1}
+        batch["tx"]["length"] = torch.tensor([1], device=c.device)
+        batch["tx_uncond_batch"] = {"x": torch.zeros(1, 512, device=c.device), "length": torch.tensor([1], device=c.device)}
         if "x" in tx_emb_dict:
             batch["tx"]["x"] = tx_emb_dict["x"].unsqueeze(0).to(c.device)
         infos = {
