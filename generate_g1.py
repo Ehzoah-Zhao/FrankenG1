@@ -1,4 +1,4 @@
-"""Generate G1 robot motions from part-level text prompts."""
+﻿"""Generate G1 robot motions from part-level text prompts."""
 from __future__ import annotations
 import logging, os, json, shutil
 import hydra
@@ -121,7 +121,7 @@ def generate(c: DictConfig):
     # Generate
     logger.info("Generating motions...")
     n_motions = batch['x'].shape[0]
-    xstart = diffusion.sample_unconditional(batch, n_motions=n_motions)
+    xstart = diffusion.batch_forward(batch, infos).cpu()
 
     # Save outputs
     exp_dir = os.path.join(c.run_dir, "generations", "t2m", exp_folder_name)

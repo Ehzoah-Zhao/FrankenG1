@@ -1,9 +1,9 @@
-import os
+﻿import os
 import logging
 import hydra
 from omegaconf import DictConfig
 from hydra.utils import instantiate
-from src.config import read_config
+from src.config import read_config, save_config
 import matplotlib
 matplotlib.use('Agg')
 
@@ -82,6 +82,7 @@ def train(cfg: DictConfig):
     else:
         resume_dir = None
         logger.info("Training script")
+        config_path = save_config(cfg)
 
     import src.prepare
     import pytorch_lightning as pl
