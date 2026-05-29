@@ -129,6 +129,8 @@ class LearnableWeightedMSELoss(nn.Module):
 def masked(tensor, mask): #set False to 0
     if isinstance(tensor, list):
         return [masked(t, mask) for t in tensor]
+    while mask.dim() < tensor.dim():
+        mask = mask.unsqueeze(-1)
     if mask.shape != tensor.shape:
         mask = mask.expand_as(tensor)
     tensor[~mask] = 0.0
