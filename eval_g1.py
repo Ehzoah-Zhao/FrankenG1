@@ -49,7 +49,15 @@ def evaluate(c: DictConfig):
 
         for run_idx in range(c.num_runs):
             torch.manual_seed(c.seed + run_idx * 1000 if c.seed >= 0 else run_idx * 1000)
-            xstart = diffusion.sample_unconditional(batch, n_motions=n_motions)
+            infos = {
+                "all_texts": batch.get("text", [""] * n_motions),
+                "all_lengths": lengths,
+                "output_lengths": lengths,
+                "split": split,
+                "global_texts": batch.get("global_text", [""] * n_motions),
+                "featsname": "g1_joints",
+            }
+            xstart = diffusion.batch_forward(batch, infos).cpu()
 
             for idx in range(n_motions):
                 length = lengths[idx]
