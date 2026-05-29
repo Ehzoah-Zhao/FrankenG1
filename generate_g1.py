@@ -103,6 +103,8 @@ def generate(c: DictConfig):
             "mask": torch.ones(1, duration_frames).bool(),
             "keyid": ["user_input_0"],
         }
+        batch["tx"]["mask"] = torch.ones(1, dtype=torch.bool).to(c.device)
+        batch["tx"]["length"] = 1
         if "x" in tx_emb_dict:
             batch["tx"]["x"] = tx_emb_dict["x"].unsqueeze(0).to(c.device)
         infos = {
